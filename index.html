@@ -76,13 +76,13 @@
             color: #00d2ff;
         }
 
-        .content-wrapper {
+        .conteneurDecontenu {
             display: grid;
             grid-template-rows: 0fr;
             transition: grid-template-rows 0.5s ease-out; 
         }
 
-        details[open] .content-wrapper {
+        details[open] .conteneurDecontenu {
             grid-template-rows: 1fr;
         }
 
@@ -123,9 +123,9 @@
     <main>
 
         <!-- Section 1 -->
-        <details class="accordion-item">
+        <details class="article">
             <summary>NOTRE HISTOIRE</summary>
-            <div class="content-wrapper">
+            <div class="conteneurDecontenu">
                 <div class="content">
                     <div class="inner-text">
                         <h2>De 2010 à aujourd'hui</h2>
@@ -140,9 +140,9 @@
         </details>
 
         <!-- Section 2 -->
-        <details class="accordion-item">
+        <details class="article">
             <summary>INNOVATION</summary>
-            <div class="content-wrapper">
+            <div class="conteneurDecontenu">
                 <div class="content">
                     <div class="inner-text">
                         <h2>La technologie au service de l'humain</h2>
@@ -157,9 +157,9 @@
         </details>
 
         <!-- Section 3 -->
-        <details class="accordion-item">
+        <details class="article">
             <summary>NOS RÉFÉRENCES</summary>
-            <div class="content-wrapper">
+            <div class="conteneurDecontenu">
                 <div class="content">
                     <div class="inner-text">
                         <h2>Ils nous font confiance</h2>
@@ -172,24 +172,6 @@
                 </div>
             </div>
         </details>
-
-        <!-- Section 4 -->
-        <details class="accordion-item">
-            <summary>CONTACT</summary>
-            <div class="content-wrapper">
-                <div class="content">
-                    <div class="inner-text">
-                        <h2>Rejoignez-nous</h2>
-                        <p>
-                            <strong>Email :</strong> hello@exposant.com<br>
-                            <strong>Téléphone :</strong> +33 6 12 34 56 78<br>
-                            <strong>Localisation :</strong> Hall A - Stand 42
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </details>
-
     </main>
 
 </body>
