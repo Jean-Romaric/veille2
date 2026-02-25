@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation Exposant</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 44px;
+            border-bottom: 12px solid #333;
+            background-color: #000;
+        }
+
+        h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0;
+            color: #fff;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 19px 10px;
+        }
+
+        
+        details > summary {
+            list-style: none; 
+        }
+        /* Pour Chrome/Safari */
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #444;
+            margin-bottom: 20px;
+        }
+
+        /* --- LE GRAND TITRE --- */
+        summary {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 3rem; /* GRAND TITRE */
+            padding: 1.5rem 0;
+            cursor: pointer;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+        }
+
+        summary:hover {
+            color: #00d2ff; /* Changement couleur au survol */
+        }
+
+        /* Petit symbole + ajouté via CSS */
+        summary::after {
+            content: '+';
+            font-size: 2rem;
+            color: #555;
+            transition: transform 0.3s;
+        }
+
+        /* Quand l'élément est ouvert */
+        details[open] summary::after {
+            transform: rotate(45deg); /* Le + tourne pour faire X */
+            color: #00d2ff;
+        }
+
+        details[open] summary {
+            color: #00d2ff;
+        }
+
+        /* --- ANIMATION DE DÉROULEMENT (L'astuce CSS Grid) --- */
+        .content-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s ease-out; /* La durée de l'animation */
+        }
+
+        details[open] .content-wrapper {
+            grid-template-rows: 1fr; /* Ouvre la grille */
+        }
+
+        .content {
+            overflow: hidden; /* Cache ce qui dépasse */
+        }
+
+        /* Style du texte à l'intérieur */
+        .inner-text {
+            padding: 0 0 2rem 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+            background-color: #222; /* Fond différent pour le contenu */
+            padding: 2rem;
+            border-radius: 0 0 8px 8px;
+        }
+
+        h2 {
+            color: #00d2ff;
+            margin-top: 0;
+        }
+
+        /* --- 4. Mobile --- */
+        @media (max-width: 600px) {
+            summary { font-size: 1.8rem; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Stand Expo 2024</h1>
+        <p class="subtitle">Cliquez sur les titres pour découvrir notre univers</p>
+    </header>
+
+    <main>
+
+        <!-- Section 1 -->
+        <details class="accordion-item">
+            <summary>NOTRE HISTOIRE</summary>
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="inner-text">
+                        <h2>De 2010 à aujourd'hui</h2>
+                        <p>
+                            Tout a commencé dans un petit garage à Lille. Aujourd'hui, nous sommes leader 
+                            européen dans notre secteur. Notre croissance repose sur une écoute active 
+                            de nos clients et une capacité d'adaptation sans faille face aux nouveaux marchés.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Section 2 -->
+        <details class="accordion-item">
+            <summary>INNOVATION</summary>
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="inner-text">
+                        <h2>La technologie au service de l'humain</h2>
+                        <p>
+                            Nous intégrons l'Intelligence Artificielle pour optimiser vos processus, 
+                            mais nous gardons l'humain au centre de la décision. Nos prototypes 
+                            actuels utilisent de la biomimétique pour réduire l'empreinte carbone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Section 3 -->
+        <details class="accordion-item">
+            <summary>NOS RÉFÉRENCES</summary>
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="inner-text">
+                        <h2>Ils nous font confiance</h2>
+                        <p>
+                            Nous travaillons avec des géants de l'industrie comme TechCorp, GlobalInd 
+                            et des start-ups prometteuses. Notre capacité à livrer des projets clés en main 
+                            fait notre réputation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Section 4 -->
+        <details class="accordion-item">
+            <summary>CONTACT</summary>
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="inner-text">
+                        <h2>Rejoignez-nous</h2>
+                        <p>
+                            <strong>Email :</strong> hello@exposant.com<br>
+                            <strong>Téléphone :</strong> +33 6 12 34 56 78<br>
+                            <strong>Localisation :</strong> Hall A - Stand 42
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+    </main>
+
+</body>
+</html>

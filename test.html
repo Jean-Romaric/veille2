@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* sélecteur d’attribut. details[open]*/
+       /*details[open] .content-wrapper <=> Sélectionne .content-wrapper à l’intérieur d’un <details> qui est ouvert
+        
+        .content-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.5s ease-out;
+        } Par défaut le contenu est fermé (hauteur = 0).
+        
+        
+        details[open] .content-wrapper {
+            grid-template-rows: 1fr;
+        }Quand on clique sur le <summary>,
+            le <details> reçoit open,
+            donc la règle s’active,
+            et la grille passe de 0fr à 1fr.
+                
+        
+        */
+
+        /* --- 3. Le Menu Déroulant (Pure CSS) --- */
+        
+        /* On supprime le petit triangle par défaut */
+        details > summary {
+            list-style: none; 
+        }
+
+        
+    </style>
+</head>
+<body>
+    <details>
+        <summary>azerty</summary>
+        <h2>De 2010 à aujourd'hui</h2>
+                        <p>
+                            Tout a commencé dans un petit garage à Lille. Aujourd'hui, nous sommes leader 
+                            européen dans notre secteur. Notre croissance repose sur une écoute active 
+                            de nos clients et une capacité d'adaptation sans faille face aux nouveaux marchés.
+                        </p>
+    </details>
+</body>
+</html>
