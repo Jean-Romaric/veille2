@@ -38,23 +38,13 @@
         details > summary {
             list-style: none; 
         }
-        /* Pour Chrome/Safari */
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .accordion-item {
-            border-bottom: 1px solid #444;
-            margin-bottom: 20px;
-        }
-
-        /* --- LE GRAND TITRE --- */
+       
         summary {
             width: 100%;
             background: none;
             border: none;
             color: #fff;
-            font-size: 3rem; /* GRAND TITRE */
+            font-size: 3rem;
             padding: 1.5rem 0;
             cursor: pointer;
             font-weight: 900;
@@ -67,10 +57,9 @@
         }
 
         summary:hover {
-            color: #00d2ff; /* Changement couleur au survol */
+            color: #00d2ff;
         }
 
-        /* Petit symbole + ajouté via CSS */
         summary::after {
             content: '+';
             font-size: 2rem;
@@ -78,9 +67,8 @@
             transition: transform 0.3s;
         }
 
-        /* Quand l'élément est ouvert */
         details[open] summary::after {
-            transform: rotate(45deg); /* Le + tourne pour faire X */
+            transform: rotate(45deg); 
             color: #00d2ff;
         }
 
@@ -88,28 +76,26 @@
             color: #00d2ff;
         }
 
-        /* --- ANIMATION DE DÉROULEMENT (L'astuce CSS Grid) --- */
         .content-wrapper {
             display: grid;
             grid-template-rows: 0fr;
-            transition: grid-template-rows 0.5s ease-out; /* La durée de l'animation */
+            transition: grid-template-rows 0.5s ease-out; 
         }
 
         details[open] .content-wrapper {
-            grid-template-rows: 1fr; /* Ouvre la grille */
+            grid-template-rows: 1fr;
         }
 
         .content {
-            overflow: hidden; /* Cache ce qui dépasse */
+            overflow: hidden;
         }
 
-        /* Style du texte à l'intérieur */
         .inner-text {
             padding: 0 0 2rem 0;
             font-size: 1.1rem;
             line-height: 1.6;
             color: #ccc;
-            background-color: #222; /* Fond différent pour le contenu */
+            background-color: #222; 
             padding: 2rem;
             border-radius: 0 0 8px 8px;
         }
@@ -119,9 +105,10 @@
             margin-top: 0;
         }
 
-        /* --- 4. Mobile --- */
         @media (max-width: 600px) {
-            summary { font-size: 1.8rem; }
+            summary { 
+                font-size: 1.8rem;
+             }
             h1 { font-size: 1.8rem; }
         }
     </style>

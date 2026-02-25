@@ -28,11 +28,36 @@
         /* --- 3. Le Menu Déroulant (Pure CSS) --- */
         
         /* On supprime le petit triangle par défaut */
-        details > summary {
+        details > summary { /*C’est un sélecteur CSS avec le combinator >, enfant direct seulement, pas petit-enfant²  */
             list-style: none; 
         }
+        /* Pour Chrome/Safari */
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+         /* Pour Chrome/Safari */
+        details > summary::-webkit-details-marker {
+            display: none;
+        }        
+        /* Petit symbole + ajouté via CSS 
+        summary::after <=> C’est un pseudo-élément CSS.
 
-        
+        ::after signifie :
+        “Créer un élément virtuel APRÈS le contenu de l’élément”
+        ⚠️ Important :
+        Ce n’est pas du HTML réel.
+        C’est un élément généré par le CSS.
+        */
+        summary::after {
+            content: '+ u';
+            font-size: 2rem;
+            color: #555;
+            transition: transform 0.3s;/*transition: transform 0.3s; ça veut dire quoi ?
+                Ça veut dire :
+                “Anime la propriété transform pendant 0.3 seconde”*/
+        }
+
+
     </style>
 </head>
 <body>
